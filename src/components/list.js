@@ -1,14 +1,14 @@
 import React from 'react';
-import listData from '../data/list';
+
 
 export default props => {
 
-    const listElements = listData.map((item,index)=>{
-        return <li className="list-group-item" key={item.id}>{item.title}</li>
+    const listElements = props.data.map((item,index)=>{
+        return <li className="list-group-item" key={index}>{item.title}</li>
     });
 
     return (
-        <ul className="list-group">
+        <ul className="list-group mt-3">
             {listElements}
         </ul>
     )
