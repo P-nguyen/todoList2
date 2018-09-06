@@ -21,8 +21,11 @@ class AddItem extends Component {
 
     handleSubmit(e){
         e.preventDefault();
-        console.log("new items!", this.state);
         this.props.add(this.state);
+        this.setState({
+            title:'',
+            details:''
+        });
     }
 
     render(){
