@@ -30,6 +30,7 @@ class App extends Component{
         this.setState({
             list:[...list]
         });
+
     }
 
     getListData(){
@@ -43,8 +44,6 @@ class App extends Component{
 
     render(){
 
-        console.log('app state:', this.state);
-
         return(
         <div>
             <div className="container">
@@ -52,7 +51,7 @@ class App extends Component{
                     <h1 className="col text-center">ToDoList</h1>
                 </div>
                 <AddItem add={this.addItem.bind(this)}/>
-                <List data={this.state.list}/>
+                <List data={this.state.list} delete={this.deleteItem.bind(this)}/>
             </div>
         </div>
         )
