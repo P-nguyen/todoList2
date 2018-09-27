@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Item from './item';
-
+import './list.css';
 
 export default (props) => {
 
+        
         const listElements = props.data.map((item,index)=>{
             //you can pass in param into function so when it is called, you already have it preset.
-            return <Item key={item._id} title={item.title} delete={props.delete.bind(this, item._id)} />
+            return <Item key={item._id} title={item.title} delete={props.delete.bind(this, item._id)} complete={item.complete} />
 
         });
     
