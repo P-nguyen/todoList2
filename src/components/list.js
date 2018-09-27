@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 
 export default (props) => {
-  
         const listElements = props.data.map((item,index)=>{
             return (
             <li className="input-group input-group-sm mb-2" key={index}>
