@@ -36,14 +36,17 @@ class App extends Component{
 
     }
 
-    deleteItem(index){
-        const {list} = this.state;
-        list.splice(index,1);
+    async deleteItem(id){
 
-        this.setState({
-            list:[...list]
-        });
+        try{
+            const resp = await axios.delete(`${this.base_url}/todos/${id}${this.api_key}`);
 
+            this.getListData();
+            
+        }catch(err){
+            console.log('error deleteing item:', err.message)
+        }
+        // console.log('delete resp:', resp);
     }
 
     async getListData(){
