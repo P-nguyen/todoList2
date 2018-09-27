@@ -1,0 +1,4 @@
+.to-do-item .complete {
+    color: #dedede;
+    text-decoration: line-through;
+}
